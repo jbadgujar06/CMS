@@ -1,5 +1,5 @@
 module.exports = {
 
-    mongoDbUrl: 'mongodb://localhost/cms'
+    mongoDbUrl: 'mongodb://127.0.0.1/cms'
 
 };

@@ -234,10 +234,10 @@ router.post('/register', (req, res)=>{
                         newUser.save().then(savedUser=>{
 
 
-                            req.flash('success_message', 'You are now registered, please login')
+                            req.flash('success_message', 'You are now registered✅')
 
 
-                            res.redirect('/login');
+                            res.redirect('/');
 
                         });
 
@@ -272,9 +272,9 @@ router.post('/register', (req, res)=>{
 
 
 
-router.get('/post/:slug', (req, res)=>{
+router.get('/post/:id', (req, res)=>{
 
-    Post.findOne({slug: req.params.slug})
+    Post.findOne({id: req.params.id})
 
         .populate({path: 'comments', populate: {path: 'user', model: 'users'}})
         .populate('user')
@@ -292,7 +292,9 @@ router.get('/post/:slug', (req, res)=>{
 
 });
 
-
+router.get("/contact",(req,res)=>{
+    res.render("home/contact")
+})
 
 module.exports = router;
 

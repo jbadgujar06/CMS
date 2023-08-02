@@ -20,7 +20,7 @@ router.all('/*',userAuthenticated, (req, res, next)=>{
 
 router.get('/', (req, res)=>{
 
-    Comment.find({user: '5a610f5bba96f1e526a5cdbb'}).populate('user')
+    Comment.find({user: req.user.id}).populate('user')
 
         .then(comments=>{
 

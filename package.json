@@ -4,7 +4,7 @@
   "description": "A CMS in NODE.js",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "CMS"
@@ -22,7 +22,7 @@
     "faker": "^4.1.0",
     "method-override": "^2.3.10",
     "moment": "^2.20.1",
-    "mongoose": "^5.0.14",
+    "mongoose": "^6.5.2",
     "mongoose-url-slugs": "^1.0.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"

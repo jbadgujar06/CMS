@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URLSlugs = require('mongoose-url-slugs');
+// const URLSlugs = require('mongoose-url-slugs');
 
 
 const Schema  = mongoose.Schema;
@@ -30,13 +30,6 @@ const PostSchema = new Schema({
 
         type: String,
         required: true
-
-    },
-
-    slug: {
-
-        type: String
-
 
     },
 
@@ -96,6 +89,6 @@ const PostSchema = new Schema({
 
 }, {usePushEach: true});
 
-PostSchema.plugin(URLSlugs('title', {field: 'slug'}));
+// PostSchema.plugin(URLSlugs('title', {field: 'slug'}));
 
 module.exports = mongoose.model('posts', PostSchema);
