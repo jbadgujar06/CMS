@@ -10,7 +10,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const {mongoDbUrl} = require('./config/database');
 const passport = require('passport');
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+// const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
 mongoose.Promise = global.Promise;
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const {select, generateDate, paginate} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', exphbs({defaultLayout: 'home',  handlebars: allowInsecurePrototypeAccess(Handlebars),helpers: {select: select, generateDate: generateDate, paginate: paginate}}));
+app.engine('handlebars', exphbs({defaultLayout: 'home',helpers: {select: select, generateDate: generateDate, paginate: paginate}}));
 app.set('view engine', 'handlebars');
 
 // Upload Middleware
