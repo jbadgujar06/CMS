@@ -10,6 +10,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const {mongoDbUrl} = require('./config/database');
 const passport = require('passport');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
 mongoose.Promise = global.Promise;
