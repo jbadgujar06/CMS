@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const {select, generateDate, paginate} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', exphbs({defaultLayout: 'home', helpers: {select: select, generateDate: generateDate, paginate: paginate}}));
+app.engine('handlebars', exphbs({defaultLayout: 'home',  handlebars: allowInsecurePrototypeAccess(Handlebars),helpers: {select: select, generateDate: generateDate, paginate: paginate}}));
 app.set('view engine', 'handlebars');
 
 // Upload Middleware
