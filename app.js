@@ -10,6 +10,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const {mongoDbUrl} = require('./config/database');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
 
 mongoose.connect(mongoDbUrl,{ useUnifiedTopology: true, useNewUrlParser: true })
     .then(db=>console.log('DB connected'))
@@ -19,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const {select, formatDate, paginate} = require('./helpers/handlebars-helpers');
 
-app.engine('handlebars', exphds({defaultLayout: 'home', helpers: {select: select, formatDate: formatDate, paginate: paginate}}));
+app.engine('handlebars', exphds({defaultLayout: 'home', handlebars: allowInsecurePrototypeAccess(Handlebars),helpers: {select: select, formatDate: formatDate, paginate: paginate}}));
 app.set('view engine', 'handlebars');
 
 //Upload middleware
