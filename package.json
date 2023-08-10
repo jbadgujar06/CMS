@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "author": "CH Barbosa",
+  "author": "Jayesh Badgujar",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
