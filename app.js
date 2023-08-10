@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const {mongoDbUrl} = require('./config/database');
 
-mongoose.connect(mongoDbUrl)
+mongoose.connect(mongoDbUrl,{ useUnifiedTopology: true, useNewUrlParser: true })
     .then(db=>console.log('DB connected'))
     .catch(err=>console.log(err));
 
